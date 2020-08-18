@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Websocket Playground</title>
+
+
+    </head>
+    <body>
+
+    </body>
+    <script>
+        const ws = new WebSocket("ws://localhost:9898/");
+        ws.onopen = function(){
+            console.log("Websocket client connected....");
+            ws.send("This is websocket client");
+        }
+        ws.onmessage =  function(e){
+            console.log("Received: ", e.data);
+        }
+    </script>
+</html>
